@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konstantinos Leontaridis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lottie Player script -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+</head>
+<body>
+
+
+
+    
+
+    <!-- Intro Section with Lottie animation -->
+    <div id="intro">
+        <dotlottie-player src="https://lottie.host/87beba28-c28d-4b94-aba1-6adc10e7ec88/n8X97AjjgA.json" 
+                          background="None"
+                          speed="1" 
+                          style="width: 1000px; height: 1000px;" 
+                          loop autoplay>
+        </dotlottie-player>
+    </div>
+
+    <!-- Main Content Section (Hidden initially) -->
+    <div id="main-content" style="display:none;">
+        <header>
+            <h1>Konstantinos Leontaridis</h1>
+            <nav>
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="photography.html">Photography</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- JavaScript to handle intro timing -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('intro').style.display = 'none'; // Hides the intro
+                document.getElementById('main-content').style.display = 'block'; // Shows the main content
+            }, 6100); // Waits 3 seconds (adjust as needed)
+        };
+    </script>
+</body>
+</html>
