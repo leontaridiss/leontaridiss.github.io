@@ -1,0 +1,235 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+/* Dynamic gradient background */
+body {
+    margin: 0;
+    height: 100vh;
+    background: #4d4545;
+    background-size: 300% 300%;
+    animation: gradientBG 5s ease infinite;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Header styles */
+header {
+    background-color: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 0px solid #ccc;
+}
+
+header h1 {
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 5.5rem;
+    background: linear-gradient(90deg, #fff,#fff, #258bf2,#d65ccd, #ec4c84, #f45550,#fff,#fff);
+    background-size: 100%;
+    -webkit-background-clip: text; /* Clip the gradient to the text (for Safari/Chrome) */
+    -webkit-text-fill-color: transparent; /* Make the actual text transparent */
+    background-clip: text; /* Clip the gradient to the text (for other browsers) */
+    text-fill-color: transparent; /* Ensure text is transparent */
+}
+
+nav ul {
+    font-family: "Afacad Flux", sans-serif;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+/* Intro section */
+#intro {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+#intro h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+#intro p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+
+/* 
+==============================
+
+        CONTACT FORM 
+
+============================== */
+
+/* Contact section styling */
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0);
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: inset 0px 2px 3px rgba(255, 255, 255, 0);
+    transition: border-color 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+/* Intro page styling */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #258bf2,#d65ccd, #ec4c84, #f45550); /* Gradient Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    overflow: hidden;
+}
+
+
+
+/* Lottie animation container with gradient overlay */
+#lottie-container {
+    position: relative;
+    width: 300px;  /* Same as the Lottie animation's width */
+    height: 300px; /* Same as the Lottie animation's height */
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb); /* Gradient effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensuring the animation is on top of the background */
+#lottie-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Main content section */
+#main-content {
+    padding: 20px;
+}
+
+/* Keyframe animations */
+@keyframes flyTowards {
+    0% {
+        opacity: 1;
+        transform: scale(0.5) translateY(0); /* Start small */
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) translateY(0); /* Grow bigger and stay in place */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(10) translateY(-500px); /* Fly off screen, become very large */
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
