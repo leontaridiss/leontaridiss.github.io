@@ -1,13 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
 
 /* General Styles */
 body {
     background-color: #1a1a2e;
     color: #d3d3d3;
-    font-family: Raleway, sans-serif;
+    font-family: Red Hat Display, sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
@@ -53,12 +63,15 @@ nav {
 
 /* Sections */
 section {
+    max-width: 1000px;
     padding: 100px 200px;
+    margin: 0 auto;
     text-align: left;
     min-height: 100vh;
-    transform: translateY(0px);
+    transform: translateY(20px);
     opacity: 0;
     transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+    width: 100%;
 }
 
 /* Responsive Design */
@@ -112,8 +125,12 @@ section.visible {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* text-align: center; */
     transform: none;
+    /* width: 100%; */
     opacity: 1;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #home p {
@@ -140,6 +157,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    text-align: center;
     opacity: .5;
 }
 
@@ -160,7 +178,7 @@ h2 {
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     opacity: .5;
 }
 
@@ -178,7 +196,8 @@ p {
     width: auto;
     color: #493dbb;
     font-weight: bold;
-    animation: blink 0.7s infinite;
+    border-radius: 20px;
+    animation: blink 1s infinite;
 }
 
 @keyframes blink {
@@ -189,13 +208,137 @@ p {
 
 
 /* Style for Contact Icons */
+
 .icon {
     width: 30px;  /* Adjust size */
     height: 30px;
-    transition: filter 0.3s ease-in-out;
+    transition: fill 0.3s;
     fill: #7d689e;
 }
 
 .nav-right a:hover .icon {
     fill: #493dbb; /* New color on hover */
+}
+
+
+
+/* Experience Section */
+#experience .timeline {
+    width: 100%;
+    position: relative;
+}
+
+#experience .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Ensure logos align properly */
+#experience .company-logo {
+    width: 90px;
+    height: 120px;
+    border-radius: 3px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+#experience .deloitte-logo {
+    width: 130px;
+    height: 70px;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-left: -25px;
+    flex-shrink: 0;
+}
+
+/* Remove background and shadow from Experience content */
+#experience .timeline-content {
+    background: none;  /* Removes the box */
+    box-shadow: none;  /* Removes the shadow */
+    padding: 0;  /* Removes unnecessary spacing */
+    text-align: left;
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: left;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: left;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.timeline-content p {
+    position: relative;
+    padding-left: 20px; /* Space for the bullet */
+}
+
+.timeline-content p::before {
+    content: "•"; /* Bullet point */
+    position: absolute;
+    left: 0;
+    color: #7d689e; /* Bullet color */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.timeline-logo {
+    width: 100px;  /* Adjust size */
+    height: 100px;
+    border-radius: 5px; /* Optional: Makes logos rounded */
+    margin-right: 20px; /* Space between logo and text */
+}
+
+.company-logo {
+    width: 100px;  /* Adjust size */
+    height: 100px;
+    border-radius: 5px; /* Optional: Makes logos rounded */
+    margin-right: 20px; /* Space between logo and text */
+    margin-top: 0px;
+}
+
+.deloitte-logo {
+    width: 120px;  /* Adjust size */
+    height: 130px;
+    border-radius: 5px; /* Optional: Makes logos rounded */
+    margin-right: 20px; /* Space between logo and text */
+    margin-top: 10px;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    color: #7d689e;
+    font-size: 1.5rem;
+}
+
+.timeline-content h4 {
+    margin: 0;
+    color: #d3d3d3;
+    font-size: 1.3rem;
+}
+
+.timeline-content p {
+    margin: 5px 0;
+    color: #d3d3d3;
 }
