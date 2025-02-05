@@ -1,235 +1,201 @@
-/* Reset some default browser styles */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General Styles */
+body {
+    background-color: #1a1a2e;
+    color: #d3d3d3;
+    font-family: Raleway, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
 }
 
-/* Body styling */
-/* Dynamic gradient background */
-body {
-    margin: 0;
-    height: 100vh;
-    background: #4d4545;
-    background-size: 300% 300%;
-    animation: gradientBG 5s ease infinite;
-    font-family: "Afacad Flux", sans-serif;
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #1a1a2e;
+    position: fixed;
+    width: 80%; /* Adjust width to be less than full screen */
+    max-width: 1200px; /* Optional: Limit max width for large screens */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 10px; /* Optional: Add rounded corners */
 }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-/* Header styles */
-header {
-    background-color: #f3f3f3;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 0px solid #ccc;
-}
-
-header h1 {
-    font-family: "Afacad Flux", sans-serif;
-    font-size: 5.5rem;
-    background: linear-gradient(90deg, #fff,#fff, #258bf2,#d65ccd, #ec4c84, #f45550,#fff,#fff);
-    background-size: 100%;
-    -webkit-background-clip: text; /* Clip the gradient to the text (for Safari/Chrome) */
-    -webkit-text-fill-color: transparent; /* Make the actual text transparent */
-    background-clip: text; /* Clip the gradient to the text (for other browsers) */
-    text-fill-color: transparent; /* Ensure text is transparent */
-}
-
-nav ul {
-    font-family: "Afacad Flux", sans-serif;
+.nav-left, .nav-right {
     list-style: none;
     display: flex;
-    justify-content: center;
+    padding: 0px;
+    margin: 0px;
 }
 
-nav ul li {
-    margin: 0 15px;
+.nav-left li, .nav-right li {
+    margin: 0 10px;
 }
 
-nav ul li a {
+.nav-left a, .nav-right a {
     text-decoration: none;
-    color: #333;
+    color: #7d689e;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #000;
+.nav-left a:hover, .nav-right a:hover {
+    color: #493dbb;
 }
 
-/* Intro section */
-#intro {
+/* Sections */
+section {
+    padding: 100px 200px;
+    text-align: left;
+    min-height: 100vh;
+    transform: translateY(0px);
+    opacity: 0;
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    nav {
+        width: 90%;
+    }
+    section {
+        padding: 8vh 5vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-left, .nav-right {
+        flex-direction: column;
+        text-align: center;
+    }
+    section {
+        padding: 6vh 4vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    section {
+        padding: 5vh 3vw;
+    }
+}
+
+/* Scroll Effect */
+section.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform: none;
+    opacity: 1;
+}
+
+#home p {
+    max-width: 700px;
     text-align: center;
-    padding: 50px 20px;
-    background-color: #fff;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
 }
 
-#intro h2 {
-    font-size: 2rem;
-    color: #333;
+#home p.visible {
+    transform: translateY(0);
+    opacity: 0.5;
 }
 
-#intro p {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-}
 
-/* Footer styles */
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
-    border-top: 1px solid #ccc;
-    margin-top: 50px;
+    background-color: #1a1a2e;
+    color: #d3d3d3;
+    font-size: 0.3rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    opacity: .5;
 }
 
 footer p {
-    font-size: 0.9rem;
-    color: #999;
-}
-
-
-/* 
-==============================
-
-        CONTACT FORM 
-
-============================== */
-
-/* Contact section styling */
-#contact {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 50px auto;
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0);
-}
-
-#contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Form styling */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input, textarea {
-    padding: 10px;
+    margin: 5px 0; 
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-shadow: inset 0px 2px 3px rgba(255, 255, 255, 0);
-    transition: border-color 0.2s ease-in-out;
-}
-
-input:focus, textarea:focus {
-    border-color: #333;
-    outline: none;
-}
-
-button {
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #555;
 }
 
 
-/* Intro page styling */
-#intro {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #258bf2,#d65ccd, #ec4c84, #f45550); /* Gradient Background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+/* Text Sizes */
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
+    opacity: .5;
+}
+
+/* Typing Effect Cursor */
+.typed-text {
+    font-size: 4rem;
+    font-weight: bold;
+    white-space: nowrap;
     overflow: hidden;
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    width: auto;
+    color: #493dbb;
+    font-weight: bold;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 
-
-/* Lottie animation container with gradient overlay */
-#lottie-container {
-    position: relative;
-    width: 300px;  /* Same as the Lottie animation's width */
-    height: 300px; /* Same as the Lottie animation's height */
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb); /* Gradient effect */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Style for Contact Icons */
+.icon {
+    width: 30px;  /* Adjust size */
+    height: 30px;
+    transition: filter 0.3s ease-in-out;
+    fill: #7d689e;
 }
 
-/* Ensuring the animation is on top of the background */
-#lottie-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Main content section */
-#main-content {
-    padding: 20px;
-}
-
-/* Keyframe animations */
-@keyframes flyTowards {
-    0% {
-        opacity: 1;
-        transform: scale(0.5) translateY(0); /* Start small */
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.5) translateY(0); /* Grow bigger and stay in place */
-    }
-    100% {
-        opacity: 1;
-        transform: scale(10) translateY(-500px); /* Fly off screen, become very large */
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        display: none;
-    }
+.nav-right a:hover .icon {
+    fill: #493dbb; /* New color on hover */
 }
