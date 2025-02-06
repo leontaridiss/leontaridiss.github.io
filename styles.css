@@ -61,20 +61,36 @@ nav {
     color: #493dbb;
 }
 
-/* Sections */
+/* Generic Section Styles */
+/* (Now all sections start 10vw from the left and have a scroll margin to avoid being hidden by the fixed nav) */
 section {
     max-width: 1000px;
     padding: 100px 200px;
-    margin: 0 auto;
+    /* margin: 0 0 0 10vw;  Left-aligned with a 10vw offset */
+    margin: 0 auto;  /* Left-aligned with a 10vw offset */
     text-align: left;
-    min-height: 100vh;
+    min-height: auto;
     transform: translateY(20px);
     opacity: 0;
     transition: transform 2s ease-in-out, opacity 2s ease-in-out;
     width: 100%;
+    scroll-margin-top: -30px;  /* Ensures correct positioning when scrolled to via an anchor */
 }
 
 /* Responsive Design */
+@media screen and (min-width: 1920px) {
+    section {
+      padding: 8vh 5vw;
+    }
+  }
+
+@media screen and (min-width: 1440px) {
+    section {
+      padding: 8vh 5vw;
+    }
+  }
+  
+
 @media screen and (max-width: 1024px) {
     nav {
         width: 90%;
@@ -94,7 +110,7 @@ section {
         text-align: center;
     }
     section {
-        padding: 6vh 4vw;
+        padding: 6vh 5vw;
     }
 }
 
@@ -109,7 +125,7 @@ section {
         font-size: 1rem;
     }
     section {
-        padding: 5vh 3vw;
+        padding: 5vh 5vw;
     }
 }
 
@@ -119,18 +135,19 @@ section.visible {
     opacity: 1;
 }
 
+/* Home Section */
 #home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* text-align: center; */
     transform: none;
-    /* width: 100%; */
     opacity: 1;
-    margin-left: auto;
-    margin-right: auto;
+    /* Match the 10vw left offset so it aligns with other sections */
+    /* margin-left: 10vw;
+    margin-right: auto; */
+    margin: 0 auto;
 }
 
 #home p {
@@ -157,13 +174,13 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    text-align: center;
     opacity: .5;
 }
 
 footer p {
     margin: 5px 0; 
     font-size: 1rem;
+    margin-bottom: 0px;
 }
 
 
@@ -191,21 +208,34 @@ p {
     display: inline-block;
 }
 
-.cursor {
+/* .cursor {
     display: inline-block;
     width: auto;
     color: #493dbb;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+} */
+
+.cursor {
+    display: inline-block;
+    width: 6px;       /* fixed width */
+    height: 60px;      /* fixed height */
+    background: #493dbb;
+    border-radius: 3px; /* fully round */
+    margin-left: 5px;  /* optional spacing */
+    margin-bottom: -5px;
     animation: blink 1s infinite;
 }
+
+
+
 
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
-
 
 /* Style for Contact Icons */
 
@@ -218,6 +248,15 @@ p {
 
 .nav-right a:hover .icon {
     fill: #493dbb; /* New color on hover */
+}
+
+.nav-right a,
+.icon {
+    pointer-events: auto;
+}
+
+.nav-right li {
+    padding: 5px;
 }
 
 
@@ -238,15 +277,16 @@ p {
 /* Ensure logos align properly */
 #experience .company-logo {
     width: 90px;
-    height: 120px;
+    height: 110px;
     border-radius: 3px;
     margin-right: 20px;
     flex-shrink: 0;
 }
 
+/* Updated Deloitte logo for consistent margins */
 #experience .deloitte-logo {
     width: 130px;
-    height: 70px;
+    height: 60px;
     border-radius: 3px;
     margin-right: 5px;
     margin-left: -25px;
@@ -263,31 +303,96 @@ p {
 }
 
 
-
-
-
-
-
-
-
-
-
-.timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 40px auto;
-    margin-right: auto;
-    margin-left: auto;
-    align-items: left;
+/* Research Section */
+#research {
+    text-align: left;
+    max-width: 1000px;  /* Ensures it doesn't stretch too wide */
+    margin: 0 auto;  /* Changed from "0 auto" to match other sections */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    scroll-margin-top: 120px;
 }
 
-.timeline-item {
+#research .timeline {
+    width: 100%;
+    position: relative;
+}
+
+#research .timeline-item {
     display: flex;
-    align-items: left;
+    align-items: center;
     margin-bottom: 40px;
     width: 100%;
 }
 
+/* Ensure logos align properly */
+#research .research-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* Remove background and shadow from Research content */
+#research .timeline-content {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+
+/* Education Section */
+#education {
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;  /* Changed from "0 auto" to align with other sections */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    scroll-margin-top: 120px;
+}
+
+/* Ensure timeline items align correctly */
+#education .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Ensure logos align exactly like other sections */
+#education .uni-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    display: block;  /* Ensures consistency */
+}
+
+/* Ensure timeline content aligns correctly */
+#education .timeline-content {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+/* Ensure consistent alignment with Research & Experience */
+#education .timeline {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* General Section Settings */
 .timeline-content p {
     position: relative;
     padding-left: 20px; /* Space for the bullet */
@@ -302,29 +407,6 @@ p {
     font-weight: bold;
 }
 
-
-.timeline-logo {
-    width: 100px;  /* Adjust size */
-    height: 100px;
-    border-radius: 5px; /* Optional: Makes logos rounded */
-    margin-right: 20px; /* Space between logo and text */
-}
-
-.company-logo {
-    width: 100px;  /* Adjust size */
-    height: 100px;
-    border-radius: 5px; /* Optional: Makes logos rounded */
-    margin-right: 20px; /* Space between logo and text */
-    margin-top: 0px;
-}
-
-.deloitte-logo {
-    width: 120px;  /* Adjust size */
-    height: 130px;
-    border-radius: 5px; /* Optional: Makes logos rounded */
-    margin-right: 20px; /* Space between logo and text */
-    margin-top: 10px;
-}
 
 .timeline-content h3 {
     margin: 0;
