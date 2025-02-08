@@ -97,7 +97,7 @@ nav {
     display: block;
     width: 30px;
     height: 4px;
-    background-color: white;
+    background-color: #7d689e;
     margin: 6px 0;
     transition: 0.3s;
     border-radius: 5px;
@@ -124,6 +124,8 @@ nav {
     display: flex;
     flex-direction: column;
     top: 60px;
+    background-image: linear-gradient(180deg, #1a1a2e,#1a1a2e,#1a1a2e, #221975);
+    border-radius: 5%;
 }
 
 /* Mobile Navigation Links */
@@ -181,4 +183,18 @@ nav {
     .nav-right {
         display: none; /* Hide regular navigation */
     }
+}
+
+
+/* Animate the Hamburger Icon to "X" */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
