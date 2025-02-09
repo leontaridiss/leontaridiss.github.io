@@ -39,3 +39,8 @@ section.visible {
     transform: translateY(0);
     opacity: 1;
 }
+
+
+/* Debbuging outlines.  {
+    outline: 1px solid red; 
+} 

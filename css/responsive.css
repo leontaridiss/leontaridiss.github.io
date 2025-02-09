@@ -57,4 +57,22 @@
     p {
         font-size: 0.9rem !important;
     }
+
+    /* Ensure no horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    /* Make sure navigation and menu bar stay inside viewport */
+    nav, .menu-bar, .mobile-menu {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* If any section is too wide, force it to fit */
+    section, div, ul {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
