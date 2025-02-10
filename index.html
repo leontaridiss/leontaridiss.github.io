@@ -193,7 +193,7 @@
   
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const text = "Hi, I am Kostas";
+      const text = "Hi, I'm Kostas";
       let index = 0;
       let speed = 150; // Adjust typing speed
       const textElement = document.getElementById("text");
@@ -267,6 +267,7 @@
         // Close menu when clicking any anchor link
         mobileLinks.forEach(link => {
             link.addEventListener("click", function() {
+                menuToggle.classList.remove("active");
                 mobileMenu.classList.remove("open");
             });
         });
