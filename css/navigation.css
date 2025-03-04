@@ -17,29 +17,6 @@ nav {
     border-radius: 10px;
 }
 
-/* Pseudo-element for the gradual blur transition */
-nav::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;; /* Starts at the bottom of the nav */
-    height: 100px; /* Transition zone height (10-20px as requested) */
-    background: linear-gradient(
-        to bottom,
-        rgba(26, 26, 46, 1) 0%, /* Matches nav background */
-        rgba(26, 26, 46, 0) 100% /* Fades to transparent */
-    );
-    z-index: 999; /* Below nav but above content */
-    pointer-events: none; /* Allows clicks to pass through */
-}
-
-/* Ensure the body or content container doesn't interfere */
-body {
-    margin: 30px;
-    padding-top: 0px; /* Adjust based on nav height to prevent overlap */
-}
-
 /* Navigation Items */
 .nav-left,
 .nav-right {
