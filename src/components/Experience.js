@@ -1,4 +1,5 @@
 import React from "react";
+import PublicImage from "./PublicImage";
 // import "../styles/sections.css";
 
 function Experience() {
@@ -7,7 +8,7 @@ function Experience() {
         <h2>work experience</h2>
         <div className="timeline">
           <div className="timeline-item">
-            <img src="logos/abnamro.png" alt="ABN AMRO logo" className="company-logo" />
+            <PublicImage src="/logos/abnamro.png" alt="ABN AMRO logo" className="company-logo" />
             <div className="timeline-content">
               <h3>Data Scientist</h3>
               <h4>ABN AMRO Bank • Nov. 2023 - Nov. 2024</h4>
@@ -26,7 +27,7 @@ function Experience() {
             </div>
           </div>
           <div className="timeline-item">
-            <img src="logos/Deloitte_Logo.png" alt="Deloitte logo" className="deloitte-logo" />
+            <PublicImage src="/logos/Deloitte_Logo.png" alt="Deloitte logo" className="deloitte-logo" />
             <div className="timeline-content">
               <h3>IT Audit Consultant</h3>
               <h4>Deloitte • June 2021 - Sept. 2021</h4>
@@ -36,7 +37,7 @@ function Experience() {
             </div>
           </div>
           <div className="timeline-item">
-            <img src="logos/EMY_shield.svg.png" alt="EMY logo" className="company-logo" />
+            <PublicImage src="/logos/EMY_shield.svg.png" alt="EMY logo" className="company-logo" />
             <div className="timeline-content">
               <h3>Data Analyst/Meteorologist</h3>
               <h4>Hellenic National Meteorological Service • June 2021 - Sept. 2021</h4>

@@ -35,7 +35,7 @@ nav::after {
 
 /* Ensure the body or content container doesn't interfere */
 body {
-    margin: 30px;
+    margin: 0;
     padding-top: 0px; /* Adjust based on nav height to prevent overlap */
 }
 

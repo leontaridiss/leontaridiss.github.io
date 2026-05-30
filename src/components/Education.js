@@ -1,4 +1,5 @@
 import react from "react";  
+import PublicImage from "./PublicImage";
 
 function Education() {
     return (
@@ -6,7 +7,7 @@ function Education() {
         <h2>education</h2>
         <div className="timeline">
           <div className="timeline-item">
-            <img src="logos/auth_logo_bkg.png" alt="AUTH Logo" className="uni-logo" />
+            <PublicImage src="/logos/auth_logo_bkg.png" alt="AUTH Logo" className="uni-logo" />
             <div className="timeline-content">
               <h3>Bachelor's in Physics</h3>
               <h4>Aristotle University of Thessaloniki • 2014 - 2019</h4>
@@ -15,7 +16,7 @@ function Education() {
             </div>
           </div>
           <div className="timeline-item">
-            <img src="logos/Amsterdamuniversitylogo.svg.png" alt="University of Amsterdam Logo" className="uni-logo" />
+            <PublicImage src="/logos/Amsterdamuniversitylogo.svg.png" alt="University of Amsterdam Logo" className="uni-logo" />
             <div className="timeline-content">
               <h3>Master's in Astroparticle Physics</h3>
               <h4>University of Amsterdam • 2021 - 2024</h4>
@@ -29,3 +30,4 @@ function Education() {
   }
 
 export default Education;
+

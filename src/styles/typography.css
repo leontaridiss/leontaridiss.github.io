@@ -20,8 +20,9 @@ p {
     font-size: 4rem;
     font-weight: bold;
     white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .cursor {

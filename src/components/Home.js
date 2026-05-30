@@ -14,7 +14,8 @@ function Home() {
       let index = 0;
       function typeEffect() {
         if (index < text.length) {
-          setTypedText((prev) => prev + text.charAt(index));
+          const i = index;
+          setTypedText((prev) => prev + text.charAt(i));
           index++;
           setTimeout(typeEffect, 150);
         }

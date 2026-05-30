@@ -40,7 +40,7 @@ function NavBar() {
           <a href="#education" onClick={handleNavClick}>education</a>
           <div className="mobile-icons">
             <a
-              href="https://www.linkedin.com/in/konstantinos-leontaridis"
+              href="https://www.linkedin.com/in/leontaridiss/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -49,7 +49,7 @@ function NavBar() {
               </svg>
             </a>
             <a
-              href="https://github.com/leontaridiss"
+              href="https://github.com/leontaridiss/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -75,7 +75,7 @@ function NavBar() {
           <ul className="nav-right">
             <li>
               <a
-                href="https://www.linkedin.com/in/konstantinos-leontaridis"
+                href="https://www.linkedin.com/in/leontaridiss/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -86,7 +86,7 @@ function NavBar() {
             </li>
             <li>
               <a
-                href="https://github.com/leontaridiss"
+                href="https://github.com/leontaridiss/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
